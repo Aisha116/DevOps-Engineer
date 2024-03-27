@@ -33,5 +33,30 @@ public class Employee {
         Employee employee = new Employee(1, "John Doe", 50000);
         employee.displayEmployeeDetails();
     }
+}
+ class DevOpsEngineer extends Employee {
+    private double bonus;
 
+    public DevOpsEngineer(int employeeId, String name, double salary, double bonus) {
+        super(employeeId, name, salary);
+        this.bonus = bonus;
+    }
+
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
+
+    public double getTotalSalary() {
+        return getSalary() + bonus;
+    }
+
+    public void displayEmployeeDetails() {
+        super.displayEmployeeDetails();
+        System.out.println("Bonus: " + bonus);
+        System.out.println("Total Salary: " + getTotalSalary());
+    }
 }
